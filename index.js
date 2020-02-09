@@ -19,7 +19,7 @@ app.listen(port, function(){
     console.log('server is running on ' + port);
 });
 
-app.post('/submit', function(req, res){
+app.post('/run', function(req, res){
 	console.log(req.body.input)
 	fs.writeFile('Output.txt', req.body.input, function (err) {
 	  if (err) throw err;
