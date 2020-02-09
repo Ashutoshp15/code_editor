@@ -20,8 +20,8 @@ app.listen(port, function(){
 });
 
 app.post('/run', function(req, res){
-	console.log(req.body.input)
-	fs.writeFile('Output.txt', req.body.input, function (err) {
+	console.log(req.body.content)
+	fs.writeFile('Output.txt', req.body.content, function (err) {
 	  if (err) throw err;
 	  console.log('Saved!');
 	  res.sendfile('saved.html');
