@@ -21,9 +21,11 @@ app.listen(port, function(){
 
 app.post('/run', function(req, res){
 	console.log(req.body.content)
-	fs.writeFile('Output.txt', req.body.content, function (err) {
+	fs.writeFile('Output.cpp', req.body.content, function (err) {
 	  if (err) throw err;
-	  console.log('Saved!');
-	  res.sendfile('saved.html');
+		//else
+		//call Shell script here
+	  //console.log('Saved!');
+	  //res.sendfile('saved.html');
 	});
 });
