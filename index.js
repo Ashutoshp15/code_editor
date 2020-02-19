@@ -23,9 +23,11 @@ app.post('/run', function(req, res){
 	console.log(req.body.content)
 	fs.writeFile('Output.cpp', req.body.content, function (err) {
 	  if (err) throw err;
-		//else
-		//call Shell script here
-	  //console.log('Saved!');
-	  //res.sendfile('saved.html');
+	  else{
+		var shell = require('shelljs')
+		shell.exec('./execute_docker.sh')
+	    console.log('Saved!');
+	  }
+	  res.sendfile('out.txt');
 	});
 });
