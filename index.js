@@ -22,7 +22,6 @@ app.listen(port, function(){
 app.post('/run', function(req, res){
 	console.log(req.body.content)
 	fs.writeFile('Output.cpp', req.body.content, function (err) {
-
 	  if (err) throw err;
 	  else{
 		var shell = require('shelljs')
